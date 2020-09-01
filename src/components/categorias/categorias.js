@@ -11,12 +11,12 @@ import Joker from '../../assets/image/joker.jpg';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 
-const useStyles = makeStyles((theme) =>({
+const useStyles = makeStyles((theme) => ({
     root: {
-      maxWidth: '100%',
+        maxWidth: '100%',
     },
     media: {
-      height: 140,
+        height: 140,
     },
     container: {
         marginTop: 20
@@ -29,53 +29,47 @@ const useStyles = makeStyles((theme) =>({
         textAlign: 'center',
         color: theme.palette.text.secondary,
     },
-  }));
+}));
 
 export default function Categorias() {
 
     const classes = useStyles();
 
-    function Cards(){
+    function Cards() {
         return (
             <Card className={classes.root}>
-            <CardActionArea>
-                <CardMedia className={classes.media} image={Joker} title="Contemplative Reptile" alt="imagen" />
-                <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                    Lizard
+                <CardActionArea>
+                    <CardMedia className={classes.media} image={Joker} title="Contemplative Reptile" alt="imagen" />
+                    <CardContent>
+                        <Typography gutterBottom variant="h5" component="h2">
+                            Lizard
                 </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                    Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                    across all continents except Antarctica
+                        <Typography variant="body2" color="textSecondary" component="p">
+                            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                            across all continents except Antarctica
                 </Typography>
-                </CardContent>
-            </CardActionArea>
-            <CardActions>
-                <Button size="small" color="primary">
-                    Ver
+                    </CardContent>
+                </CardActionArea>
+                <CardActions>
+                    <Button size="small" color="primary">
+                        Ver
                 </Button>
-            </CardActions>
+                </CardActions>
             </Card>
         );
     }
 
     return (
         <React.Fragment>
-        <Container maxWidth="lg" className={classes.container}>
-            <div className={classes.root}>
-                <Grid container spacing={3}>
-                    <Grid item xs>
-                        <Cards></Cards>
+            <Container maxWidth="xl" className={classes.container}>
+                <div className={classes.root}>
+                    <Grid container spacing={3}>
+                        <Grid item xs>
+                            <Cards></Cards>
+                        </Grid>
                     </Grid>
-                    <Grid item xs>
-                        <Cards></Cards>
-                    </Grid>
-                    <Grid item xs>
-                        <Cards></Cards>
-                    </Grid>
-                </Grid>
-            </div>
-        </Container>
-      </React.Fragment>
-      );
+                </div>
+            </Container>
+        </React.Fragment>
+    );
 }

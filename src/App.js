@@ -1,20 +1,23 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import PrimarySearchAppBar from './partials/navbar/navbar.js';
 import Header from './partials/header/header.js';
 import FloatIcon from './partials/icon-float/icon-float.js';
-import CarouselF from './components/carousel/carousel.js';
-import Categorias from './components/categorias/categorias.js';
 import Footer from './partials/footer/footer.js';
+import Index from './routes/index.js';
+import Categories from './routes/categories.js';
 
 function App() {
   return (
     <div>
-      <Header></Header>
-      <PrimarySearchAppBar></PrimarySearchAppBar>
-      <CarouselF></CarouselF>
-      <FloatIcon></FloatIcon>
-      <Categorias></Categorias>
-      <Footer></Footer>
+      <Router>
+        <Header></Header>
+        <PrimarySearchAppBar></PrimarySearchAppBar>
+        <Route path="/" exact component={Index}></Route>
+        <Route path="/category" component={Categories}></Route>
+        <FloatIcon></FloatIcon>
+        <Footer></Footer>
+      </Router>
     </div>
   );
 }
